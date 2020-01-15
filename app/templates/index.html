@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} - {{ event.event_type }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- need to add a method (post) and an action (results) -->
+      <form method = "post" action = "/results">
+        <p> Tell me your event name!</p>
+        <input type = "text" name = "event_name" />
+        <p> Tell me your event date!</p>
+        <input type = "text" name = "event_date" />
+        <br>
+        <!-- add another category called category -->
+        <p>Tell me the category of the event</p>
+        <input type = "radio" name = "category" value = "social">social <br>
+        <input type = "radio" name = "category" value = "work">work <br>
+        <input type = "radio" name = "category" value = "school">school <br>
+        <input type = "radio" name = "category" value = "afterschool">afterschool <br>
+        <br>
+
+
+        <input type = "submit" vale = "submit"/>
+      </form>
+
+      <h2> Events By Category </h2>
+
+      <body>
+      <button type="button" > <a href="http://0.0.0.0:8080/social">Click here to see all your events under the SOCIAL category</a> </button>
+      </body>
+      <body>
+      <button type="button" ><a href="http://0.0.0.0:8080/work">Click here to see all your events under the WORK category</a> </button>
+      </body>
+      <body>
+      <button type="button" ><a href="http://0.0.0.0:8080/school">Click here to see all your events under the SCHOOL category</a> </button>
+      </body>
+      <body>
+      <button type="button" ><a href="http://0.0.0.0:8080/afterschool">Click here to see all your events under the AFTERSCHOOL category</a> </button>
+      </body>
+</html>
